@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<index version="1" name="noiZ Reascript" commit="344965809559cc8e82ca48b8a22ceecc5ef47d4e">
+  <category name="BPM相关">
+    <reapack name="DSY_检测并对齐节奏.lua" type="script" desc="检测并对齐节奏">
+      <version name="1.0" author="noiZ" time="2021-05-07T02:31:19Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/474672944c47c196ed6e9b0ea9efd9fd8e2f39e8/BPM%E7%9B%B8%E5%85%B3/DSY_%E6%A3%80%E6%B5%8B%E5%B9%B6%E5%AF%B9%E9%BD%90%E8%8A%82%E5%A5%8F.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Item复制">
+    <reapack name="DSY_复制item到光标.lua" type="script" desc="复制item到光标">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E5%A4%8D%E5%88%B6/DSY_%E5%A4%8D%E5%88%B6item%E5%88%B0%E5%85%89%E6%A0%87.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_无缝复制.lua" type="script" desc="无缝复制">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E5%A4%8D%E5%88%B6/DSY_%E6%97%A0%E7%BC%9D%E5%A4%8D%E5%88%B6.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_等距离复制选中item 往右.lua" type="script" desc="等距离复制选中item 往右">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E5%A4%8D%E5%88%B6/DSY_%E7%AD%89%E8%B7%9D%E7%A6%BB%E5%A4%8D%E5%88%B6%E9%80%89%E4%B8%ADitem%20%E5%BE%80%E5%8F%B3.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_等距离复制选中item 往左.lua" type="script" desc="等距离复制选中item 往左">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E5%A4%8D%E5%88%B6/DSY_%E7%AD%89%E8%B7%9D%E7%A6%BB%E5%A4%8D%E5%88%B6%E9%80%89%E4%B8%ADitem%20%E5%BE%80%E5%B7%A6.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_自定零点复制.lua" type="script" desc="自定零点复制">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E5%A4%8D%E5%88%B6/DSY_%E8%87%AA%E5%AE%9A%E9%9B%B6%E7%82%B9%E5%A4%8D%E5%88%B6.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_自定零点粘贴.lua" type="script" desc="自定零点粘贴">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E5%A4%8D%E5%88%B6/DSY_%E8%87%AA%E5%AE%9A%E9%9B%B6%E7%82%B9%E7%B2%98%E8%B4%B4.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Item整理">
+    <reapack name="DSY_切片和整理.lua" type="script" desc="切片和整理">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E6%95%B4%E7%90%86/DSY_%E5%88%87%E7%89%87%E5%92%8C%E6%95%B4%E7%90%86.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_按名字重排item.lua" type="script" desc="按名字重排item">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E6%95%B4%E7%90%86/DSY_%E6%8C%89%E5%90%8D%E5%AD%97%E9%87%8D%E6%8E%92item.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_整理选中item.lua" type="script" desc="整理选中item">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E6%95%B4%E7%90%86/DSY_%E6%95%B4%E7%90%86%E9%80%89%E4%B8%ADitem.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_横排垂直item.lua" type="script" desc="横排垂直item">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E6%95%B4%E7%90%86/DSY_%E6%A8%AA%E6%8E%92%E5%9E%82%E7%9B%B4item.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_移动到轨道_人声.lua" type="script" desc="移动到轨道">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E6%95%B4%E7%90%86/DSY_%E7%A7%BB%E5%8A%A8%E5%88%B0%E8%BD%A8%E9%81%93_%E4%BA%BA%E5%A3%B0.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_竖排item.lua" type="script" desc="竖排item">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E6%95%B4%E7%90%86/DSY_%E7%AB%96%E6%8E%92item.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Item移动">
+    <reapack name="DSY_以所指item为中心移动选中item.lua" type="script" desc="以所指item为中心移动选中item">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%A7%BB%E5%8A%A8/DSY_%E4%BB%A5%E6%89%80%E6%8C%87item%E4%B8%BA%E4%B8%AD%E5%BF%83%E7%A7%BB%E5%8A%A8%E9%80%89%E4%B8%ADitem.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_以鼠标所指位置为中心移动item到光标.lua" type="script" desc="以鼠标所指位置为中心移动item到光标">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%A7%BB%E5%8A%A8/DSY_%E4%BB%A5%E9%BC%A0%E6%A0%87%E6%89%80%E6%8C%87%E4%BD%8D%E7%BD%AE%E4%B8%BA%E4%B8%AD%E5%BF%83%E7%A7%BB%E5%8A%A8item%E5%88%B0%E5%85%89%E6%A0%87.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_定位离鼠标最近音头.lua" type="script" desc="定位离鼠标最近音头">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%A7%BB%E5%8A%A8/DSY_%E5%AE%9A%E4%BD%8D%E7%A6%BB%E9%BC%A0%E6%A0%87%E6%9C%80%E8%BF%91%E9%9F%B3%E5%A4%B4.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_移动item到光标.lua" type="script" desc="移动item到光标">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%A7%BB%E5%8A%A8/DSY_%E7%A7%BB%E5%8A%A8item%E5%88%B0%E5%85%89%E6%A0%87.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_移动item到鼠标所指轨道 保持结构.lua" type="script" desc="移动item到鼠标所指轨道 保持结构">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%A7%BB%E5%8A%A8/DSY_%E7%A7%BB%E5%8A%A8item%E5%88%B0%E9%BC%A0%E6%A0%87%E6%89%80%E6%8C%87%E8%BD%A8%E9%81%93%20%E4%BF%9D%E6%8C%81%E7%BB%93%E6%9E%84.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_移动item到鼠标所指轨道.lua" type="script" desc="移动item到鼠标所指轨道">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%A7%BB%E5%8A%A8/DSY_%E7%A7%BB%E5%8A%A8item%E5%88%B0%E9%BC%A0%E6%A0%87%E6%89%80%E6%8C%87%E8%BD%A8%E9%81%93.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_通过鼠标滚轮微移item位置.lua" type="script" desc="通过鼠标滚轮微移item位置">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%A7%BB%E5%8A%A8/DSY_%E9%80%9A%E8%BF%87%E9%BC%A0%E6%A0%87%E6%BB%9A%E8%BD%AE%E5%BE%AE%E7%A7%BBitem%E4%BD%8D%E7%BD%AE.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Item编辑">
+    <reapack name="DSY_Pan 右入.lua" type="script" desc="Pan 右入">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%BC%96%E8%BE%91/DSY_Pan%20%E5%8F%B3%E5%85%A5.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_Pan 右出.lua" type="script" desc="Pan 右出">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%BC%96%E8%BE%91/DSY_Pan%20%E5%8F%B3%E5%87%BA.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_Pan 左入.lua" type="script" desc="Pan 左入">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%BC%96%E8%BE%91/DSY_Pan%20%E5%B7%A6%E5%85%A5.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_Pan 左出.lua" type="script" desc="Pan 左出">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%BC%96%E8%BE%91/DSY_Pan%20%E5%B7%A6%E5%87%BA.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_solo并播放鼠标所指或选中item.lua" type="script" desc="solo并播放鼠标所指或选中item">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%BC%96%E8%BE%91/DSY_solo%E5%B9%B6%E6%92%AD%E6%94%BE%E9%BC%A0%E6%A0%87%E6%89%80%E6%8C%87%E6%88%96%E9%80%89%E4%B8%ADitem.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_删除item.lua" type="script" desc="删除item">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%BC%96%E8%BE%91/DSY_%E5%88%A0%E9%99%A4item.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_删除鼠标所指以外的选中item.lua" type="script" desc="删除鼠标所指以外的选中item">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%BC%96%E8%BE%91/DSY_%E5%88%A0%E9%99%A4%E9%BC%A0%E6%A0%87%E6%89%80%E6%8C%87%E4%BB%A5%E5%A4%96%E7%9A%84%E9%80%89%E4%B8%ADitem.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_剪掉光标右侧部分.lua" type="script" desc="剪掉光标右侧部分">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%BC%96%E8%BE%91/DSY_%E5%89%AA%E6%8E%89%E5%85%89%E6%A0%87%E5%8F%B3%E4%BE%A7%E9%83%A8%E5%88%86.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_剪掉光标左侧部分.lua" type="script" desc="剪掉光标左侧部分">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%BC%96%E8%BE%91/DSY_%E5%89%AA%E6%8E%89%E5%85%89%E6%A0%87%E5%B7%A6%E4%BE%A7%E9%83%A8%E5%88%86.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_剪掉鼠标右侧部分.lua" type="script" desc="剪掉鼠标右侧部分">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%BC%96%E8%BE%91/DSY_%E5%89%AA%E6%8E%89%E9%BC%A0%E6%A0%87%E5%8F%B3%E4%BE%A7%E9%83%A8%E5%88%86.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_剪掉鼠标左侧部分.lua" type="script" desc="剪掉鼠标左侧部分">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%BC%96%E8%BE%91/DSY_%E5%89%AA%E6%8E%89%E9%BC%A0%E6%A0%87%E5%B7%A6%E4%BE%A7%E9%83%A8%E5%88%86.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_单独glue选中的每一个item.lua" type="script" desc="单独glue选中的每一个item">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%BC%96%E8%BE%91/DSY_%E5%8D%95%E7%8B%ACglue%E9%80%89%E4%B8%AD%E7%9A%84%E6%AF%8F%E4%B8%80%E4%B8%AAitem.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_变速拉伸.lua" type="script" desc="变速拉伸">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%BC%96%E8%BE%91/DSY_%E5%8F%98%E9%80%9F%E6%8B%89%E4%BC%B8.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_合成选中item.lua" type="script" desc="合成选中item">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%BC%96%E8%BE%91/DSY_%E5%90%88%E6%88%90%E9%80%89%E4%B8%ADitem.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_在光标处剪开item.lua" type="script" desc="在光标处剪开item">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%BC%96%E8%BE%91/DSY_%E5%9C%A8%E5%85%89%E6%A0%87%E5%A4%84%E5%89%AA%E5%BC%80item.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_复制item到光标.lua" type="script" desc="复制item到光标">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%BC%96%E8%BE%91/DSY_%E5%A4%8D%E5%88%B6item%E5%88%B0%E5%85%89%E6%A0%87.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_定位snap到音头.lua" type="script" desc="定位snap到音头">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%BC%96%E8%BE%91/DSY_%E5%AE%9A%E4%BD%8Dsnap%E5%88%B0%E9%9F%B3%E5%A4%B4.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_把空item的时长写入空item中.lua" type="script" desc="把空item的时长写入空item中">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%BC%96%E8%BE%91/DSY_%E6%8A%8A%E7%A9%BAitem%E7%9A%84%E6%97%B6%E9%95%BF%E5%86%99%E5%85%A5%E7%A9%BAitem%E4%B8%AD.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_淡入到鼠标.lua" type="script" desc="淡入到鼠标">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%BC%96%E8%BE%91/DSY_%E6%B7%A1%E5%85%A5%E5%88%B0%E9%BC%A0%E6%A0%87.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_淡出到鼠标.lua" type="script" desc="淡出到鼠标">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%BC%96%E8%BE%91/DSY_%E6%B7%A1%E5%87%BA%E5%88%B0%E9%BC%A0%E6%A0%87.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_线性音调.lua" type="script" desc="线性音调">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%BC%96%E8%BE%91/DSY_%E7%BA%BF%E6%80%A7%E9%9F%B3%E8%B0%83.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_线性音量.lua" type="script" desc="线性音量">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%BC%96%E8%BE%91/DSY_%E7%BA%BF%E6%80%A7%E9%9F%B3%E9%87%8F.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_设置item吸附点到鼠标位置.lua" type="script" desc="设置item吸附点到鼠标位置">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%BC%96%E8%BE%91/DSY_%E8%AE%BE%E7%BD%AEitem%E5%90%B8%E9%99%84%E7%82%B9%E5%88%B0%E9%BC%A0%E6%A0%87%E4%BD%8D%E7%BD%AE.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_输入文字到空item.lua" type="script" desc="输入文字到空item">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%BC%96%E8%BE%91/DSY_%E8%BE%93%E5%85%A5%E6%96%87%E5%AD%97%E5%88%B0%E7%A9%BAitem.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_通过鼠标滚轮调整item速度.lua" type="script" desc="通过鼠标滚轮调整item速度">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%BC%96%E8%BE%91/DSY_%E9%80%9A%E8%BF%87%E9%BC%A0%E6%A0%87%E6%BB%9A%E8%BD%AE%E8%B0%83%E6%95%B4item%E9%80%9F%E5%BA%A6.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_通过鼠标滚轮调整item间距.lua" type="script" desc="通过鼠标滚轮调整item间距">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%BC%96%E8%BE%91/DSY_%E9%80%9A%E8%BF%87%E9%BC%A0%E6%A0%87%E6%BB%9A%E8%BD%AE%E8%B0%83%E6%95%B4item%E9%97%B4%E8%B7%9D.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_通过鼠标滚轮调整item音量.lua" type="script" desc="通过鼠标滚轮调整item音量">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%BC%96%E8%BE%91/DSY_%E9%80%9A%E8%BF%87%E9%BC%A0%E6%A0%87%E6%BB%9A%E8%BD%AE%E8%B0%83%E6%95%B4item%E9%9F%B3%E9%87%8F.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Item选择">
+    <reapack name="DSY_取消选择 鼠标以上.lua" type="script" desc="取消选择 鼠标以上">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E9%80%89%E6%8B%A9/DSY_%E5%8F%96%E6%B6%88%E9%80%89%E6%8B%A9%20%E9%BC%A0%E6%A0%87%E4%BB%A5%E4%B8%8A.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_取消选择 鼠标以下.lua" type="script" desc="取消选择 鼠标以下">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E9%80%89%E6%8B%A9/DSY_%E5%8F%96%E6%B6%88%E9%80%89%E6%8B%A9%20%E9%BC%A0%E6%A0%87%E4%BB%A5%E4%B8%8B.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_取消选择 鼠标右边.lua" type="script" desc="取消选择 鼠标右边">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E9%80%89%E6%8B%A9/DSY_%E5%8F%96%E6%B6%88%E9%80%89%E6%8B%A9%20%E9%BC%A0%E6%A0%87%E5%8F%B3%E8%BE%B9.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_取消选择 鼠标左边.lua" type="script" desc="取消选择 鼠标左边">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E9%80%89%E6%8B%A9/DSY_%E5%8F%96%E6%B6%88%E9%80%89%E6%8B%A9%20%E9%BC%A0%E6%A0%87%E5%B7%A6%E8%BE%B9.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_在region中查找选中item.lua" type="script" desc="在region中查找选中item">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E9%80%89%E6%8B%A9/DSY_%E5%9C%A8region%E4%B8%AD%E6%9F%A5%E6%89%BE%E9%80%89%E4%B8%ADitem.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_在工程中查找选中item.lua" type="script" desc="在工程中查找选中item">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E9%80%89%E6%8B%A9/DSY_%E5%9C%A8%E5%B7%A5%E7%A8%8B%E4%B8%AD%E6%9F%A5%E6%89%BE%E9%80%89%E4%B8%ADitem.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_批量选择指定范围内items.lua" type="script" desc="批量选择选定范围内items">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E9%80%89%E6%8B%A9/DSY_%E6%89%B9%E9%87%8F%E9%80%89%E6%8B%A9%E6%8C%87%E5%AE%9A%E8%8C%83%E5%9B%B4%E5%86%85items.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_选中鼠标所指region当前文件夹下所有item.lua" type="script" desc="选中鼠标所指region当前文件夹下所有item">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E9%80%89%E6%8B%A9/DSY_%E9%80%89%E4%B8%AD%E9%BC%A0%E6%A0%87%E6%89%80%E6%8C%87region%E5%BD%93%E5%89%8D%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E6%89%80%E6%9C%89item.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Loop相关">
+    <reapack name="DSY_音乐loop.lua" type="script" desc="音乐loop">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Loop%E7%9B%B8%E5%85%B3/DSY_%E9%9F%B3%E4%B9%90loop.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_音效loop.lua" type="script" desc="音效loop">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Loop%E7%9B%B8%E5%85%B3/DSY_%E9%9F%B3%E6%95%88loop.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Region相关">
+    <reapack name="DSY_按名字重排region.lua" type="script" desc="按名字重排region">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Region%E7%9B%B8%E5%85%B3/DSY_%E6%8C%89%E5%90%8D%E5%AD%97%E9%87%8D%E6%8E%92region.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_根据选中item重设region边界.lua" type="script" desc="根据选中item重设region边界">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Region%E7%9B%B8%E5%85%B3/DSY_%E6%A0%B9%E6%8D%AE%E9%80%89%E4%B8%ADitem%E9%87%8D%E8%AE%BEregion%E8%BE%B9%E7%95%8C.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_添加多个region并命名.lua" type="script" desc="添加多个region并命名">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Region%E7%9B%B8%E5%85%B3/DSY_%E6%B7%BB%E5%8A%A0%E5%A4%9A%E4%B8%AAregion%E5%B9%B6%E5%91%BD%E5%90%8D.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="光标相关">
+    <reapack name="DSY_定位光标到item吸附点.lua" type="script" desc="定位光标到item吸附点">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/%E5%85%89%E6%A0%87%E7%9B%B8%E5%85%B3/DSY_%E5%AE%9A%E4%BD%8D%E5%85%89%E6%A0%87%E5%88%B0item%E5%90%B8%E9%99%84%E7%82%B9.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_定位光标到鼠标所指item或region终点.lua" type="script" desc="定位光标到鼠标所指item或reion终点">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/%E5%85%89%E6%A0%87%E7%9B%B8%E5%85%B3/DSY_%E5%AE%9A%E4%BD%8D%E5%85%89%E6%A0%87%E5%88%B0%E9%BC%A0%E6%A0%87%E6%89%80%E6%8C%87item%E6%88%96region%E7%BB%88%E7%82%B9.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_定位光标到鼠标所指item或region起点.lua" type="script" desc="定位光标到鼠标所指item或region起点">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/%E5%85%89%E6%A0%87%E7%9B%B8%E5%85%B3/DSY_%E5%AE%9A%E4%BD%8D%E5%85%89%E6%A0%87%E5%88%B0%E9%BC%A0%E6%A0%87%E6%89%80%E6%8C%87item%E6%88%96region%E8%B5%B7%E7%82%B9.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_定位到鼠标右侧素材.lua" type="script" desc="定位到鼠标右侧素材">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/%E5%85%89%E6%A0%87%E7%9B%B8%E5%85%B3/DSY_%E5%AE%9A%E4%BD%8D%E5%88%B0%E9%BC%A0%E6%A0%87%E5%8F%B3%E4%BE%A7%E7%B4%A0%E6%9D%90.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_定位到鼠标左侧素材.lua" type="script" desc="定位到鼠标左侧素材">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/%E5%85%89%E6%A0%87%E7%9B%B8%E5%85%B3/DSY_%E5%AE%9A%E4%BD%8D%E5%88%B0%E9%BC%A0%E6%A0%87%E5%B7%A6%E4%BE%A7%E7%B4%A0%E6%9D%90.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="其他">
+    <reapack name="DSY_一键导出.lua" type="script" desc="一键导出">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/%E5%85%B6%E4%BB%96/DSY_%E4%B8%80%E9%94%AE%E5%AF%BC%E5%87%BA.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="其他/复制文件到工程目录">
+    <reapack name="DSY_复制文件到工程目录.lua" type="script" desc="复制文件到工程目录">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/%E5%85%B6%E4%BB%96/%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6%E5%88%B0%E5%B7%A5%E7%A8%8B%E7%9B%AE%E5%BD%95/DSY_%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6%E5%88%B0%E5%B7%A5%E7%A8%8B%E7%9B%AE%E5%BD%95.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="包络相关">
+    <reapack name="DSY_pan包络 右入.lua" type="script" desc="pan包络 右入">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/%E5%8C%85%E7%BB%9C%E7%9B%B8%E5%85%B3/DSY_pan%E5%8C%85%E7%BB%9C%20%E5%8F%B3%E5%85%A5.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_pan包络 右出.lua" type="script" desc="pan包络 右出">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/%E5%8C%85%E7%BB%9C%E7%9B%B8%E5%85%B3/DSY_pan%E5%8C%85%E7%BB%9C%20%E5%8F%B3%E5%87%BA.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_pan包络 左入.lua" type="script" desc="pan包络 左入">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/%E5%8C%85%E7%BB%9C%E7%9B%B8%E5%85%B3/DSY_pan%E5%8C%85%E7%BB%9C%20%E5%B7%A6%E5%85%A5.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_pan包络 左出.lua" type="script" desc="pan包络 左出">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/%E5%8C%85%E7%BB%9C%E7%9B%B8%E5%85%B3/DSY_pan%E5%8C%85%E7%BB%9C%20%E5%B7%A6%E5%87%BA.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_pitch包络 升调.lua" type="script" desc="pitch包络 升调">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/%E5%8C%85%E7%BB%9C%E7%9B%B8%E5%85%B3/DSY_pitch%E5%8C%85%E7%BB%9C%20%E5%8D%87%E8%B0%83.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_pitch包络 降调.lua" type="script" desc="pitch包络 降调">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/%E5%8C%85%E7%BB%9C%E7%9B%B8%E5%85%B3/DSY_pitch%E5%8C%85%E7%BB%9C%20%E9%99%8D%E8%B0%83.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="工程相关">
+    <reapack name="DSY_移动选中item到子工程.lua" type="script" desc="移动选中item到子工程">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/%E5%B7%A5%E7%A8%8B%E7%9B%B8%E5%85%B3/DSY_%E7%A7%BB%E5%8A%A8%E9%80%89%E4%B8%ADitem%E5%88%B0%E5%AD%90%E5%B7%A5%E7%A8%8B.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="轨道相关">
+    <reapack name="DSY_solo.lua" type="script" desc="solo">
+      <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/%E8%BD%A8%E9%81%93%E7%9B%B8%E5%85%B3/DSY_solo.lua</source>
+      </version>
+    </reapack>
+  </category>
+</index>
