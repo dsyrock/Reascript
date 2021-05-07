@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"? >
 <index version="1" name="noiZ Reascript" commit="344965809559cc8e82ca48b8a22ceecc5ef47d4e">
   <category name="BPM相关">
     <reapack name="DSY_检测并对齐节奏.lua" type="script" desc="检测并对齐节奏">
