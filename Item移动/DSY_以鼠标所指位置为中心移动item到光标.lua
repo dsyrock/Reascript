@@ -1,3 +1,10 @@
+--[[
+ReaScript Name: 以鼠标所指位置为中心移动item到光标
+Version: 1.0
+Author: noiZ
+]]
+
+
 function move_item_point_to_point(pos_st, pos_des)
 
 	local num=reaper.CountSelectedMediaItems(0)

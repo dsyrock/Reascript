@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 定位snap到音头
+Version: 1.0
+Author: noiZ
+]]
+
 reaper.Undo_BeginBlock()
 reaper.PreventUIRefresh(1)
 

@@ -1,8 +1,13 @@
+--[[
+ReaScript Name: 选中鼠标所指region当前文件夹下所有item
+Version: 1.0
+Author: noiZ
+]]
+
 function msg(value)
     reaper.ShowConsoleMsg(tostring(value) .. "\n")
 end
 
-reaper.Undo_BeginBlock()
 reaper.PreventUIRefresh(1)
 
 local cur=reaper.GetCursorPosition()
@@ -28,4 +33,3 @@ reaper.SetEditCurPos(cur, 0, 0)
 
 reaper.UpdateArrange()
 reaper.PreventUIRefresh(-1)
-reaper.Undo_EndBlock(debug.getinfo(1,'S').source:match[[^@?.*[\/]([^\/%.]+).+$]], -1)

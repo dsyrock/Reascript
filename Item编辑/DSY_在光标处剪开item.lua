@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 在光标处剪开item
+Version: 1.0
+Author: noiZ
+]]
+
 function main()
 
 	reaper.PreventUIRefresh(1)

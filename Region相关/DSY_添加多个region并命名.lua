@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 添加多个region并命名
+Version: 1.0
+Author: noiZ
+]]
+
 reaper.Undo_BeginBlock()
 
 local num=reaper.CountSelectedMediaItems(0)

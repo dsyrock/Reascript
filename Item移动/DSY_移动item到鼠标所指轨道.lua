@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 移动item到鼠标所指轨道
+Version: 1.0
+Author: noiZ
+]]
+
 reaper.Undo_BeginBlock()
 reaper.PreventUIRefresh(1)
 

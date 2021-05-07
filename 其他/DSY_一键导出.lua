@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 一键导出
+Version: 1.0
+Author: noiZ
+]]
+
 local debug=0
 
 function msg(value)

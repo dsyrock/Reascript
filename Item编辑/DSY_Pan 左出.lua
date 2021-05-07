@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: Pan 左出
+Version: 1.0
+Author: noiZ
+]]
+
 function pan_take(pana,panz)
 	reaper.Undo_BeginBlock()
 	local num=reaper.CountSelectedMediaItems(0)
@@ -19,6 +25,6 @@ function pan_take(pana,panz)
 		reaper.SetMediaItemTakeInfo_Value(tk, "D_PAN", pana+(i-1)*d)
 	end
   	reaper.UpdateArrange()
-  	reaper.Undo_EndBlock("线性调整pan 右出", -1)
+  	reaper.Undo_EndBlock("线性调整pan 左出", -1)
 end
-pan_take(0,0.7)
+pan_take(0,-0.7)

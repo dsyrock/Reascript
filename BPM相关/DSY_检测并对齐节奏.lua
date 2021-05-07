@@ -3,6 +3,7 @@ ReaScript Name: 检测并对齐节奏
 Version: 1.0
 Author: noiZ
 ]]
+
 reaper.Undo_BeginBlock()
 reaper.PreventUIRefresh(1)
 

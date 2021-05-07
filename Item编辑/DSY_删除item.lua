@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 删除item
+Version: 1.0
+Author: noiZ
+]]
+
 function main()
 
 	reaper.Undo_BeginBlock()

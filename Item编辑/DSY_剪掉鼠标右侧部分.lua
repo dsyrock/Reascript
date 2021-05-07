@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 剪掉鼠标右侧部分
+Version: 1.0
+Author: noiZ
+]]
+
 local junyuan='on'
 
 function right(it)

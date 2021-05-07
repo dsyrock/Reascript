@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 通过鼠标滚轮调整item速度
+Version: 1.0
+Author: noiZ
+]]
+
 function main()
 
     local it=reaper.BR_ItemAtMouseCursor()

@@ -1,4 +1,10 @@
-﻿local debug="on"
+﻿--[[
+ReaScript Name: 复制文件到工程目录
+Version: 1.0
+Author: noiZ
+]]
+
+local debug="on"
 
 function msg(value)
 
@@ -19,8 +25,7 @@ function get_take_file(tk)  --获取take源文件路径
     return sr, sr_file
 
 end
-
-local path_dll=reaper.GetResourcePath().."\\UserPlugins\\fileops.dll"
+local path_dll = info.source:match[[^@?(.*[\/])[^\/]-$]]..'fileops.dll'
 
 if not reaper.file_exists(path_dll) then reaper.MB("请先拷贝fileops.dll文件到UserPlugins文件夹", "提示", 0) return end
 

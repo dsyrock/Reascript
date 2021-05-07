@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 在region中查找选中item
+Version: 1.0
+Author: noiZ
+]]
+
 function search_in_region()
 	reaper.PreventUIRefresh(1)
 	local num=reaper.CountSelectedMediaItems(0)

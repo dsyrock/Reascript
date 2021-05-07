@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 整理选中item
+Version: 1.0
+Author: noiZ
+]]
+
 function organize()
 
     reaper.PreventUIRefresh(1)

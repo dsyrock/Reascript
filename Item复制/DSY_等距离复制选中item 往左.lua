@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 等距离复制选中item 往左
+Version: 1.0
+Author: noiZ
+]]
+
 function items_dup(rev)
     reaper.Undo_BeginBlock()
     reaper.PreventUIRefresh(1)

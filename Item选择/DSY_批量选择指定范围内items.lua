@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 批量选择选定范围内items
+Version: 1.0
+Author: noiZ
+]]
+
 reaper.Undo_BeginBlock()
 
 reaper.PreventUIRefresh(1)

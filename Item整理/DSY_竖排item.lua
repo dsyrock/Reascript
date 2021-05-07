@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 竖排item
+Version: 1.0
+Author: noiZ
+]]
+
 reaper.Undo_BeginBlock()
 reaper.PreventUIRefresh(1)
 

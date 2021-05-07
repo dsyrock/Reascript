@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 输入文字到空item
+Version: 1.0
+Author: noiZ
+]]
+
 reaper.Undo_BeginBlock()
 
 local it=reaper.GetSelectedMediaItem(0, 0)

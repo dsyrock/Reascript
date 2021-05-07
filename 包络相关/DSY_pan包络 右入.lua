@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: pan包络 右入
+Version: 1.0
+Author: noiZ
+]]
+
 function env(name,pointA,pointZ)
 	reaper.Undo_BeginBlock()
 	reaper.PreventUIRefresh(1)

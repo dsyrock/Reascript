@@ -1,3 +1,10 @@
+--[[
+ReaScript Name: 把空item的时长写入空item中
+Version: 1.0
+Author: noiZ
+]]
+
+
 local num=reaper.CountSelectedMediaItems(0)
 
 if num==0 then return end

@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 通过鼠标滚轮微移item位置
+Version: 1.0
+Author: noiZ
+]]
+
 function main()
 
 reaper.PreventUIRefresh(1)

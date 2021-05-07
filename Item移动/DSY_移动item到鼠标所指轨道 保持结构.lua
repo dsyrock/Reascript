@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 移动item到鼠标所指轨道 保持结构
+Version: 1.0
+Author: noiZ
+]]
+
 local itemnum=reaper.CountSelectedMediaItems(0)
 
 if itemnum==0 then return end

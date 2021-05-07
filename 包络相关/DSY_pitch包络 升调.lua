@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: pitch包络 升调
+Version: 1.0
+Author: noiZ
+]]
+
 function env(name,pointA,pointZ)
 	reaper.Undo_BeginBlock()
 	reaper.PreventUIRefresh(1)

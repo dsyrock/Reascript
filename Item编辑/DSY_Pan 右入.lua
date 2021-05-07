@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: Pan 右入
+Version: 1.0
+Author: noiZ
+]]
+
 function pan_take(pana,panz)
 	reaper.Undo_BeginBlock()
 	local num=reaper.CountSelectedMediaItems(0)

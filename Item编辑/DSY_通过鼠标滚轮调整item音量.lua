@@ -1,3 +1,9 @@
+--[[
+ReaScript Name:  通过鼠标滚轮调整item音量
+Version: 1.0
+Author: noiZ
+]]
+
 function main()
     local db=1  --每次变动的音量值
     local dir=0  --0为正向，1为反向

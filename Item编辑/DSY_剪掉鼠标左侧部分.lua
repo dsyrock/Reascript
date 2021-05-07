@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 剪掉鼠标左侧部分
+Version: 1.0
+Author: noiZ
+]]
+
 function main()
 
 	reaper.PreventUIRefresh(1)

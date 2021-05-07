@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 切片和整理
+Version: 1.0
+Author: noiZ
+]]
+
 function msg(value)
     reaper.ShowConsoleMsg(tostring(value) .. "\n")
 end

@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 自定零点复制
+Version: 1.0
+Author: noiZ
+]]
+
 reaper.PreventUIRefresh(1)
 
 local num=reaper.CountSelectedMediaItems(0)

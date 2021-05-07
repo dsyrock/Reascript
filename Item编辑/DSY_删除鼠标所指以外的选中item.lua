@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 删除鼠标所指以外的选中item
+Version: 1.0
+Author: noiZ
+]]
+
 function main()
 
 	local num=reaper.CountSelectedMediaItems(0)

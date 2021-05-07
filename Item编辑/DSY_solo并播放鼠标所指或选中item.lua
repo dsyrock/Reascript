@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: solo并播放鼠标所指或选中item
+Version: 1.0
+Author: noiZ
+]]
+
 function main()
 
 	reaper.PreventUIRefresh(1)

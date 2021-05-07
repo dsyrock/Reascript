@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 移动选中item到子工程
+Version: 1.0
+Author: noiZ
+]]
+
 function msg(value)
     reaper.ShowConsoleMsg(tostring(value) .. '\n')
 end

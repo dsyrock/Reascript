@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 移动item到光标
+Version: 1.0
+Author: noiZ
+]]
+
 function main()
 
 	reaper.Undo_BeginBlock()

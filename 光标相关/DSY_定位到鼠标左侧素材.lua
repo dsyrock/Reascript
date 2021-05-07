@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 定位到鼠标左侧素材
+Version: 1.0
+Author: noiZ
+]]
+
 reaper.PreventUIRefresh(1)
 
 local mouse=reaper.BR_PositionAtMouseCursor(true)

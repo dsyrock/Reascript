@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 取消选择 鼠标右边
+Version: 1.0
+Author: noiZ
+]]
+
 reaper.PreventUIRefresh(1)
 
 local num=reaper.CountSelectedMediaItems(0)

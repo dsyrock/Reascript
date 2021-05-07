@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 合成选中item
+Version: 1.0
+Author: noiZ
+]]
+
 function mix_items()
     if reaper.CountSelectedMediaItems(0)==0 then return end
     reaper.Undo_BeginBlock()
@@ -27,6 +33,7 @@ function mix_items()
     local new_db=math.log(1, 10)*20+10
     local new_vol=10^((new_db)/20)
     reaper.SetMediaItemInfo_Value(new_item, "D_VOL", new_vol)
+    reaper.Main_OnCommand(40541, 0)  --set snap to cursor
     reaper.PreventUIRefresh(-1)
     reaper.Undo_EndBlock("原地合成item",-1)
     reaper.UpdateArrange()

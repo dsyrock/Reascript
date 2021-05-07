@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 通过鼠标滚轮调整item间距
+Version: 1.0
+Author: noiZ
+]]
+
 function msg(value)
     reaper.ShowConsoleMsg(tostring(value) .. "\n")
 end

@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 变速拉伸
+Version: 1.0
+Author: noiZ
+]]
+
 reaper.Undo_BeginBlock()
 
 local cur=reaper.GetCursorPosition()

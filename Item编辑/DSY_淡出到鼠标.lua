@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 淡出到鼠标
+Version: 1.0
+Author: noiZ
+]]
+
 function set_fadeout(it)
 
 	local mouse=reaper.BR_PositionAtMouseCursor(true)

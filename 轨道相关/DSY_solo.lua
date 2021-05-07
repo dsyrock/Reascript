@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: solo
+Version: 1.0
+Author: noiZ
+]]
+
 function main()
 
 	reaper.PreventUIRefresh(1)

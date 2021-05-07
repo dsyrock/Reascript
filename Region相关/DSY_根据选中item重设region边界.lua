@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 根据选中item重设region边界
+Version: 1.0
+Author: noiZ
+]]
+
 reaper.Undo_BeginBlock()
 
 num=reaper.CountSelectedMediaItems(0)

@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 自定零点粘贴
+Version: 1.0
+Author: noiZ
+]]
+
 reaper.Undo_BeginBlock()
 reaper.PreventUIRefresh(1)
 local cur=reaper.GetCursorPosition()

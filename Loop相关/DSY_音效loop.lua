@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 音效loop
+Version: 1.0
+Author: noiZ
+]]
+
 local ratio=0.1
 
 reaper.Undo_BeginBlock()

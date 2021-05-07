@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 复制item到光标
+Version: 1.0
+Author: noiZ
+]]
+
 function copy()
 	local left, right=reaper.GetSet_ArrangeView2(0, false, 0, 0, 0, 0)
 	local cur=reaper.GetCursorPosition()

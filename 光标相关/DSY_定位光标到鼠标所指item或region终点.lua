@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 定位光标到鼠标所指item或reion终点
+Version: 1.0
+Author: noiZ
+]]
+
 function main()
 
 	reaper.PreventUIRefresh(1)

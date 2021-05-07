@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 无缝复制
+Version: 1.0
+Author: noiZ
+]]
+
 reaper.Undo_BeginBlock()
 reaper.PreventUIRefresh(1)
 num=reaper.CountSelectedMediaItems(0)

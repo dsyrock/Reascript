@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 剪掉光标右侧部分
+Version: 1.0
+Author: noiZ
+]]
+
 function main()
 
 	local it=reaper.BR_ItemAtMouseCursor()

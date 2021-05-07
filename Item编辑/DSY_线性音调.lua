@@ -1,3 +1,9 @@
+--[[
+ReaScript Name: 线性音调
+Version: 1.0
+Author: noiZ
+]]
+
 function linear_pitch()
     local num=reaper.CountSelectedMediaItems(0)
     if num==0 then return end
