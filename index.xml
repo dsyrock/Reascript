@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="noiZ Reascript" commit="caf77c0f7906248e7ccbd8983463c4ed1aeb6877">
+<index version="1" name="noiZ Reascript" commit="0a28da7210b90eb1dceffc732f9453346363dc29">
   <category name="BPM相关">
     <reapack name="DSY_检测并对齐节奏.lua" type="script" desc="检测并对齐节奏">
       <version name="1.0" author="noiZ" time="2021-05-07T02:31:19Z">
@@ -92,7 +92,7 @@
         <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%A7%BB%E5%8A%A8/DSY_%E7%A7%BB%E5%8A%A8item%E5%88%B0%E5%85%89%E6%A0%87.lua</source>
       </version>
     </reapack>
-    <reapack name="DSY_移动item到鼠标所指轨道 保持结构.lua" type="script" desc="DSY_移动item到鼠标所指轨道_保持结构">
+    <reapack name="DSY_移动item到鼠标所指轨道 保持结构.lua" type="script" desc="移动item到鼠标所指轨道_保持结构">
       <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
         <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Item%E7%A7%BB%E5%8A%A8/DSY_%E7%A7%BB%E5%8A%A8item%E5%88%B0%E9%BC%A0%E6%A0%87%E6%89%80%E6%8C%87%E8%BD%A8%E9%81%93%20%E4%BF%9D%E6%8C%81%E7%BB%93%E6%9E%84.lua</source>
       </version>
