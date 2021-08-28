@@ -1,5 +1,5 @@
 --[[
-ReaScript Name: DSY_移动item到鼠标所指轨道_保持结构
+ReaScript Name: 移动item到鼠标所指轨道_保持结构
 Version: 1.0
 Author: noiZ
 ]]
