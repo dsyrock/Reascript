@@ -1,6 +1,6 @@
 --[[
 ReaScript Name: 移动item到鼠标所指轨道_保持结构
-Version: 1.0
+Version: 1.01
 Author: noiZ
 ]]
 
