@@ -1,6 +1,6 @@
 --[[
-ReaScript Name: item置顶
-Version: 1.1
+ReaScript Name: 轨道置顶
+Version: 1.0
 Author: noiZ
 ]]
 
@@ -13,34 +13,28 @@ local win=reaper.GetOS():match("Win")
 local wWin=reaper.NF_Win32_GetSystemMetrics(win and 16 or 1)
 local hWin=400
 local hwnd=reaper.JS_Window_FindChildByID(reaper.GetMainHwnd(), 1000)
-local ret, viewLeft, viewTop, viewRight, viewBot=reaper.JS_Window_GetRect(hwnd)
 local wDraw=wWin
--- local wDrawDock=wWin-viewLeft+(wWin-viewRight)
 local hDraw=hWin*0.8
 local xDraw=(wWin-wDraw)/2
--- local xDrawDock=viewLeft+1
 local yDraw=(hWin-hDraw)/2
--- local yCenter=yDraw+hDraw/2
 local yCenter=hWin/2
 
 -------------------------------------------------------------------常量定义-------------------------------------------------------------------
-local itLast=0  --上一个选中的item
-local posLast=-1 --上一个选中的item的位置
-local lenLast=-1  --上一个长度
-local volLast=-2  --上一个音量
-local offsetLast=-1  --上一个偏移量
+local trLast=0  --上一个选中的轨道
 local zoomLast=-1  --上一个缩放量
 local screenL, screenR=-1 ,-1  --屏幕左右边界
 local wWinLast, hWinLast=-1, -1  --上一个窗口尺寸
+local samples={}  --所有采样点的数据
+local waves={}  --波形每个点的坐标
 local scale=1  --缩放系数
 local lock=false  --锁定状态
 local state=''  --按键状态
-local itLock  --锁定的item
+local trLock  --锁定的item
 local redraw=false  --重绘状态
 
 -------------------------------------------------------------------窗口初始化-------------------------------------------------------------------
 gfx.clear=4210752
-gfx.init( 'item置顶', wWin, hWin, 0, 5, 100)
+gfx.init( '显示波形', wWin, hWin, 0, 5, 100)
 gfx.dock(1)
 -------------------------------------------------------------------功能函数-------------------------------------------------------------------
 function get_samples(item)
@@ -144,42 +138,6 @@ function get_scale_size()
     return x, y, w, h
 end
 
-function get_coor_from_smpls(smpls, vol, xrec, yrec, wrec, hrec, yC)
-    local t={}
-    --按照通道数初始化
-    for i=1, #smpls do
-        t[i]={}
-    end
-    local nSamples=#smpls[1]  --采样数
-    local dPerSample=wrec/(nSamples-1)  --每个采样点之间间隔，n个采样点包含n-1个间隔
-    -- msg(nSamples..' '..dPerSample)
-    local stereo=#smpls>1  --是否双声道
-
-    for k, v in pairs(smpls) do
-        local count=0
-        for k1, v1 in pairs(v) do
-            if v1==0 then count=count+1 end
-            local x=xrec+(k1-1)*dPerSample  --横坐标
-            local ymin, ymax  --纵坐标极值
-            if stereo then
-                if k==1 then
-                    ymin, ymax=yC, yrec
-                else
-                    ymin, ymax=yrec+hrec, yC
-                end
-            else
-                ymin, ymax=yrec+hrec, yrec
-            end
-            local vScale=v1*vol
-            vScale=(vScale<-1 and -1) or (vScale>1 and 1) or vScale
-            local y=value_convert(vScale, -1, 1, ymin, ymax)
-            t[k][k1]={x, y}
-        end
-        -- msg(count)
-    end
-    return t
-end
-
 function draw_waves(t, scaleX, scaleY)
     if not t then return end
     if not t[1] then return end
@@ -215,56 +173,59 @@ end
 -------------------------------------------------------------------功能-------------------------------------------------------------------
 function set_lock()
     if not lock then
-        local it=reaper.GetSelectedMediaItem(0, 0)
-        if not it then return end
-        local take=reaper.GetActiveTake(it)
-        if not take or reaper.TakeIsMIDI( take ) then return end
-        itLock=it
+        local tr=reaper.GetSelectedTrack(0, 0)
+        if not tr then return end
+        trLock=tr
     end
     lock=not lock
     redraw=true
 end
 
+function get_items_on_track(tr, screenL, screenR, zoom)
+    local num=reaper.CountTrackMediaItems(tr)
+    if num==0 then return false end
+    local isDock=gfx.dock(-1)>0
+    local ret, viewLeft, viewTop, viewRight=reaper.JS_Window_GetRect(hwnd)
+    local xDrawDock=viewLeft+1
+    for i=0, num-1 do
+        local it=reaper.GetTrackMediaItem(tr, i)
+        local tk=reaper.GetActiveTake(it)
+        local mute=reaper.GetMediaItemInfo_Value(it, 'B_MUTE')==1
+        local pos=reaper.GetMediaItemInfo_Value(it, 'D_POSITION')
+        local edge=reaper.GetMediaItemInfo_Value(it, 'D_LENGTH')+pos
+        if pos>=screenR then break end
+        if edge>screenL and tk and not reaper.TakeIsMIDI(tk) and not mute then
+            local samples=get_samples(it)
+            pos=math.max(pos, screenL)
+            len=math.min(edge, screenR)-pos
+            local volit=reaper.GetMediaItemInfo_Value(it, 'D_VOL')
+            local voltk=reaper.GetMediaItemTakeInfo_Value(tk, 'D_VOL')
+            local vol=volit*voltk
+            local waves=get_coor_from_smpls(samples, vol, (pos-screenL)*zoom+xDrawDock, yDraw, len*zoom, hDraw, yCenter)
+            draw_waves(waves, gfx.w/(isDock and viewRight or wWin), gfx.h/hWin)  --绘制波形
+        end
+    end
+end
 -------------------------------------------------------------------主进程-------------------------------------------------------------------
 function main()
-    if lock or reaper.CountSelectedMediaItems(0)>0 then
-        local it=lock and itLock or reaper.GetSelectedMediaItem(0, 0)
-        local tk=reaper.GetActiveTake(it)
-        if not it or reaper.TakeIsMIDI(tk) then return end
-        local posCheck=reaper.GetMediaItemInfo_Value(it, 'D_POSITION')
-        local lenCheck=reaper.GetMediaItemInfo_Value(it, 'D_LENGTH')
-        local volIT=reaper.GetMediaItemInfo_Value(it, 'D_VOL')
-        local volTK=reaper.GetMediaItemTakeInfo_Value(tk, 'D_VOL')
-        local volCheck=volIT*volTK
-        local offsetCheck=reaper.GetMediaItemTakeInfo_Value(tk, 'D_STARTOFFS')
+    local tr=lock and trLock or reaper.GetSelectedTrack(0, 0)
+    if tr then
         local zoomCheck=reaper.GetHZoomLevel()
         local screenLCheck, screenRCheck=reaper.GetSet_ArrangeView2(0, 0, 0, 0)
-        if posCheck<screenRCheck and posCheck+lenCheck>screenLCheck and ((lock and it~=itLast) or posCheck~=posLast or lenCheck~=lenLast or volCheck~=volLast or offsetCheck~=offsetLast or gfx.w~=wWinLast or gfx.h~=hWinLast or zoomCheck~=zoomLast or screenLCheck~=screenL or screenRCheck~=screenR or redraw) then
-            itLast=it
-            posLast=posCheck
-            lenLast=lenCheck
-            volLast=volCheck
-            offsetLast=offsetCheck
+        if (not lock and tr~=trLast) or gfx.w~=wWinLast or gfx.h~=hWinLast or zoomCheck~=zoomLast or screenLCheck~=screenL or screenRCheck~=screenR or redraw then
+            trLast=tr
             zoomLast=zoomCheck
             screenL=screenLCheck
             screenR=screenRCheck
             wWinLast=gfx.w
             hWinLast=gfx.h
-            local isDock=gfx.dock(-1)>0
-            local leftMax=math.max(screenL, posLast)
-            local ret, viewLeft, viewTop, viewRight=reaper.JS_Window_GetRect(hwnd)
-            local xDrawDock=viewLeft+1
-            local xDrawCur=isDock and xDrawDock+(leftMax-screenL)*zoomLast or xDraw
-            local wDrawCur=isDock and (math.min(screenR, posLast+lenLast)-leftMax)*zoomLast or wDraw
-            local samples=get_samples(itLast)  --获取采样数据
-            local waves=get_coor_from_smpls(samples, volCheck, xDrawCur, yDraw, wDrawCur, hDraw, yCenter)  --获取坐标数据
             clear_and_set_gfx_buffer(0, 0)
-            draw_waves(waves, gfx.w/(isDock and viewRight or wWin), gfx.h/hWin)  --绘制波形
+            get_items_on_track(tr, screenL, screenR, zoomLast)
             redraw=false
         end
         gfx.blit(0, 1, 0)
     else
-        itLast=0
+        trLast=0
     end
     gfx.blit(1, 1, 0)
 end
