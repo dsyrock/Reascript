@@ -28,7 +28,7 @@ local version='v1.3'  --版本号
 --------------------------------------------------------------读取预置文件------------------------------------------------------------------------------------
 local sep=reaper.GetOS():find('Win') and '\\' or '/'
 local check_, render_path=reaper.GetSetProjectInfo_String(0, 'RENDER_FILE', '', 0)
-if not check and render_path=='' then render_path=reaper.GetProjectPath('')..sep end
+render_path=render_path:match(sep) and render_path or reaper.GetProjectPath('')..sep..render_path
 
 local config_path=reaper.GetResourcePath()  --获取预置文件路径
 
@@ -42,58 +42,55 @@ file:close()
 
 local preset_flag={}  --分类储存预置文件内容
 
+function esc(s)
+    local matches =
+    {
+      ["^"] = "%^",
+      ["$"] = "%$",
+      ["("] = "%(",
+      [")"] = "%)",
+      ["%"] = "%%",
+      ["."] = "%.",
+      ["["] = "%[",
+      ["]"] = "%]",
+      ["*"] = "%*",
+      ["+"] = "%+",
+      ["-"] = "%-",
+      ["?"] = "%?",
+    }
+    return (s:gsub(".", matches))
+end
+
 local name_len=0  --记录预置名字最长的长度
 
 local name_longest
 
-for v in text:gmatch('<[^>]+>[^<]+OUTPUT[^<]+') do
-
+for v in text:gmatch('<RENDERPRESET.-RENDERPRESET_OUTPUT[^\n\r]+') do
+	
 	local name1, name2
 
-	local sr, channel, render_mode, sr_use, resam, dither, code, bound, edl, edr, source, pattern, tail
-
-	if not v:find('[\'\"]') then
-
-		name1=v:match('RENDERPRESET (%S+) %d+')
-
-		name2=v:match('OUTPUT (%S+) %d+')
-
-		if name1==name2 then 
-			msg(name1)
-			sr, channel, render_mode, sr_use, resam, dither, code, bound, edl, edr, source, pattern, tail=v:match('<RENDERPRESET %S+ (%d+) (%d+) (%d+) (%d+) (%d+) (%d+)%s?%d?%s+(%S+)[^>]+>[^>]+OUTPUT %S+ (%d+) (%S+) (%S+) (%d+) %d+ (%S+) (%d+)') 
-		
-		end
-
-	else
-
-		name1=v:match('RENDERPRESET [\'\"]+([^\"\']+)[\'\"]+ %d+')
-
-		name2=v:match('OUTPUT [\'\"]+([^\"\']+)[\'\"]+ %d+')
-
-		if name1==name2 then 
-			msg(name1)
-			sr, channel, render_mode, sr_use, resam, dither, code, bound, edl, edr, source, pattern, tail=v:match('<RENDERPRESET [\'\"]+[^\"\']+[\'\"]+ (%d+) (%d+) (%d+) (%d+) (%d+) (%d+)%s?%d?%s+(%S+)[^>]+>[^>]+OUTPUT [\'\"]+[^\"\']+[\'\"]+ (%d+) (%S+) (%S+) (%d+) %d+ (%S+) (%d+)') 
-		
-		end
-
+	if not v:find('RENDERPRESET \"') then  --预置名字无空格
+		name1=v:match('<RENDERPRESET (%S+) %d+')
+		name2=v:match('RENDERPRESET_OUTPUT (%S+) %d+')
+	else  --预置名字有空格
+		name1=v:match('<RENDERPRESET [\'\"]+([^\"\']+)[\'\"]+ %d+')
+		name2=v:match('RENDERPRESET_OUTPUT [\'\"]+([^\"\']+)[\'\"]+ %d+')
 	end
-	
-	if sr then
-		msg(sr) msg(channel) msg(render_mode) msg(sr_use) msg(resam) msg(dither) msg(code) msg(bound) msg(edl) msg(edr) msg(source) msg(pattern) msg(tail)	
-		preset_flag[#preset_flag+1]={name=name1, sr=sr, channel=channel, sr_use=sr_use, dither=dither, code=code, bound=bound, edl=edl, edr=edr, source=source, pattern=pattern, tail=tail, path=render_path}
 
+	if name1 and name2 and name1==name2 then 
+        local sr, channel, render_mode, sr_use, resam, dither, code=v:match('<RENDERPRESET \"?'..esc(name1)..'\"? (%d+) (%d+) (%d+) (%d+) (%d+) (%d+) %d+%s+(%S+)')
+        local bound, edl, edr, source, pattern, tail, folder=v:match('RENDERPRESET_OUTPUT \"?'..esc(name1)..'\"? (%d+) (%S+) (%S+) (%d+) %d+ (%S+) (%d+) ([^\n\r]+)')
+        folder=folder:gsub('\"', '')
+        local normalize_option, targetNor, targetLim=v:match('RENDERPRESET_EXT \"?'..esc(name1)..'\"? (%S+) (%S+) (%S+)')
+        local code2=v:match('RENDERPRESET2[^\n\r]+[\n\r]([^\n\r]+)[\n\r]>')
+        preset_flag[#preset_flag+1]={name=name1, sr=sr, channel=channel, sr_use=sr_use, dither=dither, code=code, bound=bound, edl=edl, edr=edr, source=source, pattern=pattern, tail=tail, path=#folder>0 and folder or render_path, normalize_option=normalize_option, target_nor=targetNor, target_lim=targetLim, code2=code2 and code2:match('%S+') or ''}
+		
 		if name1:len()>name_len then
-
 			name_longest=name1  --保留预置名字最长的名字
-
 			name_len=name1:len()  --保留预置名字最长的长度
-
 		end
-
 		table.insert(queue, false)
-		
 	end
-
 end
 
 --------------------------------------------------------------窗口基本参数--------------------------------------------------------------
@@ -216,33 +213,27 @@ main()
 
 --------------------------------------------------------------导出函数--------------------------------------------------------------
 function render(preset_index)
-
-    reaper.CSurf_OnPlayRateChange(1)
-
-    reaper.GetSetProjectInfo(0, 'RENDER_SETTINGS', preset_flag[preset_index].source, true)  --source
-
-    reaper.GetSetProjectInfo(0, 'RENDER_BOUNDSFLAG', preset_flag[preset_index].bound, true)  --bound
-
-    reaper.GetSetProjectInfo(0, 'RENDER_CHANNELS', preset_flag[preset_index].channel, true)  --channel
-
-    reaper.GetSetProjectInfo(0, 'RENDER_SRATE', preset_flag[preset_index].sr, true)  --sample rate
-
-    reaper.GetSetProjectInfo(0, 'RENDER_STARTPOS', preset_flag[preset_index].edl, true)  --start pos
-
-    reaper.GetSetProjectInfo(0, 'RENDER_ENDPOS', preset_flag[preset_index].edr, true)  --end pos
-
-    reaper.GetSetProjectInfo(0, 'RENDER_TAILFLAG', preset_flag[preset_index].tail, true)  --tail flag
-
-    reaper.GetSetProjectInfo(0, 'RENDER_DITHER', preset_flag[preset_index].dither, true)  --DITHER
-
-    reaper.GetSetProjectInfo(0, 'PROJECT_SRATE_USE', preset_flag[preset_index].sr_use, true)  --sample rate use
-
-    reaper.GetSetProjectInfo_String(0, 'RENDER_FILE', preset_flag[preset_index].path, true)  --render path
-
-    reaper.GetSetProjectInfo_String(0, 'RENDER_PATTERN', preset_flag[preset_index].pattern, true)  --render pattern
-
-    reaper.GetSetProjectInfo_String(0, 'RENDER_FORMAT', preset_flag[preset_index].code, true)  --render format
+	local t=preset_flag[preset_index]
+	reaper.CSurf_OnPlayRateChange(1)
+    reaper.GetSetProjectInfo(0, 'RENDER_SETTINGS', t.source, true)  --source
+    reaper.GetSetProjectInfo(0, 'RENDER_BOUNDSFLAG', t.bound, true)  --bound
+    reaper.GetSetProjectInfo(0, 'RENDER_CHANNELS', t.channel, true)  --channel
+    reaper.GetSetProjectInfo(0, 'RENDER_SRATE', t.sr, true)  --sample rate
+    reaper.GetSetProjectInfo(0, 'RENDER_STARTPOS', t.edl, true)  --start pos
+    reaper.GetSetProjectInfo(0, 'RENDER_ENDPOS', t.edr, true)  --end pos
+    reaper.GetSetProjectInfo(0, 'RENDER_TAILFLAG', t.tail, true)  --tail flag
+    reaper.GetSetProjectInfo(0, 'RENDER_DITHER', t.dither, true)  --DITHER
+    reaper.GetSetProjectInfo(0, 'PROJECT_SRATE_USE', t.sr_use, true)  --sample rate use
+    reaper.GetSetProjectInfo_String(0, 'RENDER_FILE', t.path, true)  --render path
+    reaper.GetSetProjectInfo_String(0, 'RENDER_PATTERN', t.pattern, true)  --render pattern
+    reaper.GetSetProjectInfo_String(0, 'RENDER_FORMAT', t.code, true)  --render format
     
+	reaper.GetSetProjectInfo(0, 'RENDER_NORMALIZE', t.normalize_option or 0, true)
+	reaper.GetSetProjectInfo(0, 'RENDER_NORMALIZE_TARGET', t.normalize_option and t.target_nor or 1, true)
+	reaper.GetSetProjectInfo(0, 'RENDER_BRICKWALL', t.normalize_option and t.target_lim or 1, true)
+
+	reaper.GetSetProjectInfo_String(0, 'RENDER_FORMAT2', t.code2, true)  --render format2
+
     reaper.Main_OnCommand(42230, 0)  --render using recent setting   auto close dialog
         
 end
@@ -276,21 +267,25 @@ function add_action(idx)
 	script_path=script_path..'/Scripts/'..script_name  --补全脚本文件路径
 
 	local file=io.output(script_path)  --读取脚本文件路径
-
-	local path=reaper.GetOS():find('Win') and preset_flag[idx].path..'\\' or preset_flag[idx].path
+	local t=preset_flag[idx]
+	local path=reaper.GetOS():find('Win') and t.path..'\\' or t.path
 	file:write('reaper.CSurf_OnPlayRateChange(1)\n')
-	file:write('reaper.GetSetProjectInfo(0, \'RENDER_SETTINGS\', '..preset_flag[idx].source..', true)\n')
-	file:write('reaper.GetSetProjectInfo(0, \'RENDER_BOUNDSFLAG\', '..preset_flag[idx].bound..', true)\n')
-	file:write('reaper.GetSetProjectInfo(0, \'RENDER_CHANNELS\', '..preset_flag[idx].channel..', true)\n')
-	file:write('reaper.GetSetProjectInfo(0, \'RENDER_SRATE\', '..preset_flag[idx].sr..', true)\n')
-	file:write('reaper.GetSetProjectInfo(0, \'RENDER_STARTPOS\', '..preset_flag[idx].edl..', true)\n')
-	file:write('reaper.GetSetProjectInfo(0, \'RENDER_ENDPOS\', '..preset_flag[idx].edr..', true)\n')
-	file:write('reaper.GetSetProjectInfo(0, \'RENDER_TAILFLAG\', '..preset_flag[idx].tail..', true)\n')
-	file:write('reaper.GetSetProjectInfo(0, \'RENDER_DITHER\', '..preset_flag[idx].dither..', true)\n')
-	file:write('reaper.GetSetProjectInfo(0, \'PROJECT_SRATE_USE\', \''..preset_flag[idx].sr_use..'\', true)\n')
-	file:write('reaper.GetSetProjectInfo_String(0, \'RENDER_FILE\', \''..path..'\', true)\n')
-	file:write('reaper.GetSetProjectInfo_String(0, \'RENDER_PATTERN\', \''..preset_flag[idx].pattern..'\', true)\n')
-	file:write('reaper.GetSetProjectInfo_String(0, \'RENDER_FORMAT\', \''..preset_flag[idx].code..'\', true)\n')
+	file:write('reaper.GetSetProjectInfo(0, \'RENDER_SETTINGS\', '..t.source..', true)\n')
+	file:write('reaper.GetSetProjectInfo(0, \'RENDER_BOUNDSFLAG\', '..t.bound..', true)\n')
+	file:write('reaper.GetSetProjectInfo(0, \'RENDER_CHANNELS\', '..t.channel..', true)\n')
+	file:write('reaper.GetSetProjectInfo(0, \'RENDER_SRATE\', '..t.sr..', true)\n')
+	file:write('reaper.GetSetProjectInfo(0, \'RENDER_STARTPOS\', '..t.edl..', true)\n')
+	file:write('reaper.GetSetProjectInfo(0, \'RENDER_ENDPOS\', '..t.edr..', true)\n')
+	file:write('reaper.GetSetProjectInfo(0, \'RENDER_TAILFLAG\', '..t.tail..', true)\n')
+	file:write('reaper.GetSetProjectInfo(0, \'RENDER_DITHER\', '..t.dither..', true)\n')
+	file:write('reaper.GetSetProjectInfo(0, \'PROJECT_SRATE_USE\', \''..t.sr_use..'\', true)\n')
+	file:write('reaper.GetSetProjectInfo_String(0, \'RENDER_FILE\', \''..t.path..'\', true)\n')
+	file:write('reaper.GetSetProjectInfo_String(0, \'RENDER_PATTERN\', \''..t.pattern..'\', true)\n')
+	file:write('reaper.GetSetProjectInfo_String(0, \'RENDER_FORMAT\', \''..t.code..'\', true)\n')
+	file:write('reaper.GetSetProjectInfo_String(0, \'RENDER_NORMALIZE\', \''..(t.normalize_option or 0)..'\', true)\n')
+	file:write('reaper.GetSetProjectInfo_String(0, \'RENDER_NORMALIZE_TARGET\', \''..(t.normalize_option and t.target_nor or 1)..'\', true)\n')
+	file:write('reaper.GetSetProjectInfo_String(0, \'RENDER_BRICKWALL\', \''..(t.normalize_option and t.target_lim or 1)..'\', true)\n')
+	file:write('reaper.GetSetProjectInfo_String(0, \'RENDER_FORMAT2\', \''..t.code2..'\', true)\n')
 	file:write('reaper.Main_OnCommand(42230, 0)')
 
 	file:close()
