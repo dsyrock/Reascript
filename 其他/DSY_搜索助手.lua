@@ -2,8 +2,6 @@
 ReaScript Name: 搜索助手
 Version: 1.0
 Author: noiZ
-Provides: 
-    [data] DSY_GUI.lua
 ]]
 
 --[[
