@@ -3,7 +3,7 @@ ReaScript Name: ReaMetadata
 Version: 1.0
 Author: noiZ
 Provides: 
-    [script] DSY_GUI.lua
+    DSY_GUI.lua
 ]]
 function msg(value)
     reaper.ShowConsoleMsg(tostring(value) .. '\n')
