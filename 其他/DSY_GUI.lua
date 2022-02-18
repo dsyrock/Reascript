@@ -1,6 +1,6 @@
 -- @description DSY_GUI
 -- @author noiZ
--- @noindex
+-- @provides [nomain]
 
 --[[
 运作流程
@@ -869,7 +869,10 @@ function main()
 
 	if gui.key>=0 then reaper.defer(main) end
 end
-
+-------------------------------------------------------------------焦点-------------------------------------------------------------------
+function gui.focus.set_focus()  --获得焦点
+	reaper.JS_Window_SetFocus(gui.focus.hwnd)
+end
 -------------------------------------------------------------------窗口初始化-------------------------------------------------------------------
 function get_longest(t)
     if #t==0 then return end

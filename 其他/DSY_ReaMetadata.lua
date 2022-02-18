@@ -2,8 +2,6 @@
 ReaScript Name: ReaMetadata
 Version: 1.0
 Author: noiZ
-Provides: 
-    DSY_GUI.lua
 ]]
 function msg(value)
     reaper.ShowConsoleMsg(tostring(value) .. '\n')
@@ -26,6 +24,7 @@ local listmethod={'修改', '添加', '删除'}
 local win = string.find(reaper.GetOS(), "Win") ~= nil
 local sep=win and '\\' or '/'
 local enter=win and '\n' or '\r'
+local key_press_last=0 --上次按键状态
 -------------------------------------------------------------------功能相关-------------------------------------------------------------------
 function get_mediadb_path(name) --获取当前的MediaDB路径，name-MediaDB名称，resource-资源文件夹路径
     local resource=reaper.GetResourcePath()..'/'
@@ -103,6 +102,7 @@ function get_sel_item_path_from_me(hwnd)  --获取选中文件的路径
 end
 
 function edit_metadata(mode, metatagidx, keyword)
+    if not keyword or keyword=='' then return end
     local mediadbPath=get_mediadb_path(nameDB)  --当前打开的db对应的database文件路径
     local file=io.open(mediadbPath)
     local mediadb=file:read('*all')
@@ -136,6 +136,7 @@ function input_keyword()
     local ret, input=reaper.GetUserInputs('请输入关键词', 1, '关键词', '')
     if not ret or input=='' then return end
     gui.board.keyword.value=input
+    gui.focus.set_focus()
 end
 -------------------------------------------------------------------操作相关-------------------------------------------------------------------
 local click_keyword={}
@@ -186,13 +187,23 @@ function gui.main.draw()
         w=400,
         h=30,
         r=10,
-        title='写入',
+        title='运行',
         action=click_write,
         colr=0,  --0.45
         colg=0.6,  --0
         colb=1,  --1
     })
     
+end
+-------------------------------------------------------------------按键相关-------------------------------------------------------------------
+function gui.loop.key()
+    local key_press=reaper.JS_VKeys_GetState(0.5):byte(13)
+    if key_press~=key_press_last then
+        if key_press==1 and key_press_last==0 then
+            edit_metadata(gui.drop.edit_method.value, gui.drop.metadata.value, gui.board.keyword.value)
+        end
+        key_press_last=key_press
+    end
 end
 -------------------------------------------------------------------延迟运行-------------------------------------------------------------------
 function gui.late.init()
