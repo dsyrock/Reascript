@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="noiZ Reascript" commit="0ce712d5d1bb3f82e94ee066f26f64b778367d0b">
+<index version="1" name="noiZ Reascript" commit="63a38fa6bb2f92cfd623ce7814f22c9eb0a1c6dd">
   <category name="BPM相关">
     <reapack name="DSY_检测并对齐节奏.lua" type="script" desc="检测并对齐节奏">
       <version name="1.0" author="noiZ" time="2021-05-07T02:31:19Z">
@@ -368,6 +368,11 @@
     </reapack>
   </category>
   <category name="其他">
+    <reapack name="DSY_GUI.lua" type="script" desc="DSY_GUI">
+      <version name="1.0" author="noiZ" time="2022-02-18T12:48:39Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/3297979def74f9b80ecdb785511d786a25bdd934/%E5%85%B6%E4%BB%96/DSY_GUI.lua</source>
+      </version>
+    </reapack>
     <reapack name="DSY_item置顶.lua" type="script" desc="item置顶">
       <version name="1.0" author="noiZ" time="2021-12-10T04:39:04Z">
         <source main="main">https://github.com/dsyrock/Reascript/raw/58349f754dff60c563639b43a901d6a0dd5f040a/%E5%85%B6%E4%BB%96/DSY_item%E7%BD%AE%E9%A1%B6.lua</source>
@@ -379,7 +384,6 @@
     <reapack name="DSY_ReaMetadata.lua" type="script" desc="ReaMetadata">
       <version name="1.0" author="noiZ" time="2022-02-11T04:44:48Z">
         <source main="main">https://github.com/dsyrock/Reascript/raw/a2f7804b878b3835c82cbda6dddfd0b8ad545c01/%E5%85%B6%E4%BB%96/DSY_ReaMetadata.lua</source>
-        <source file="DSY_GUI.lua">https://github.com/dsyrock/Reascript/raw/a2f7804b878b3835c82cbda6dddfd0b8ad545c01/%E5%85%B6%E4%BB%96/DSY_GUI.lua</source>
       </version>
     </reapack>
     <reapack name="DSY_一键导出.lua" type="script" desc="一键导出">
@@ -395,7 +399,6 @@
     </reapack>
     <reapack name="DSY_轨道置顶.lua" type="script" desc="轨道置顶">
       <version name="1.0" author="noiZ" time="2021-12-14T05:31:16Z">
-        <source main="main">https://github.com/dsyrock/Reascript/raw/fddc3bd6ed7df002c9244d27a120a8699508f570/%E5%85%B6%E4%BB%96/DSY_%E8%BD%A8%E9%81%93%E7%BD%AE%E9%A1%B6.lua</source>
       </version>
     </reapack>
   </category>
