@@ -1,6 +1,6 @@
---@description DSY_GUI
 --@version 1.0
 --@author noiZ
+--@description DSY_GUI
 --@provides [data] .
 
 --[[
