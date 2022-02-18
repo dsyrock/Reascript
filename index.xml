@@ -394,7 +394,6 @@
     <reapack name="DSY_搜索助手.lua" type="script" desc="搜索助手">
       <version name="1.0" author="noiZ" time="2022-02-11T08:01:08Z">
         <source main="main">https://github.com/dsyrock/Reascript/raw/181a1160e2a8972662c94bedcaeb2969261c18d9/%E5%85%B6%E4%BB%96/DSY_%E6%90%9C%E7%B4%A2%E5%8A%A9%E6%89%8B.lua</source>
-        <source type="data" file="DSY_GUI.lua">https://github.com/dsyrock/Reascript/raw/181a1160e2a8972662c94bedcaeb2969261c18d9/%E5%85%B6%E4%BB%96/DSY_GUI.lua</source>
       </version>
     </reapack>
     <reapack name="DSY_轨道置顶.lua" type="script" desc="轨道置顶">
