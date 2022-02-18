@@ -1,6 +1,8 @@
---@version 1.0
---@author noiZ
---@description 搜索助手
+--[[
+ReaScript Name: 搜索助手
+Version: 1.0
+Author: noiZ
+]]
 
 --[[
 文本结构：分类名#按钮编号#关键词1|关键词2|......|关键词n

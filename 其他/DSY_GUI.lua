@@ -1,7 +1,6 @@
 --@version 1.0
 --@author noiZ
 --@description DSY_GUI
---@provides [data] .
 
 --[[
 运作流程
