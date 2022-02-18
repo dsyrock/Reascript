@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="noiZ Reascript" commit="ec50c9d9f8da10453774cb6f2599f3691297204d">
+<index version="1" name="noiZ Reascript" commit="d135c538f3dfde71be361f76b7c877f8d74cc73a">
   <category name="BPM相关">
     <reapack name="DSY_检测并对齐节奏.lua" type="script" desc="检测并对齐节奏">
       <version name="1.0" author="noiZ" time="2021-05-07T02:31:19Z">
@@ -398,6 +398,11 @@
     </reapack>
     <reapack name="DSY_轨道置顶.lua" type="script" desc="轨道置顶">
       <version name="1.0" author="noiZ" time="2021-12-14T05:31:16Z">
+      </version>
+    </reapack>
+    <reapack name="测试用.lua" type="script" desc="dsytest">
+      <version name="1.0" author="noiZ" time="2022-02-18T13:37:00Z">
+        <source>https://github.com/dsyrock/Reascript/raw/d135c538f3dfde71be361f76b7c877f8d74cc73a/%E5%85%B6%E4%BB%96/%E6%B5%8B%E8%AF%95%E7%94%A8.lua</source>
       </version>
     </reapack>
   </category>
