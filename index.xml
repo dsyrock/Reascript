@@ -370,7 +370,7 @@
   <category name="其他">
     <reapack name="DSY_GUI.lua" type="script" desc="DSY_GUI">
       <version name="1.0" author="noiZ" time="2022-02-18T12:48:39Z">
-        <source main="main">https://github.com/dsyrock/Reascript/raw/3297979def74f9b80ecdb785511d786a25bdd934/%E5%85%B6%E4%BB%96/DSY_GUI.lua</source>
+        <source>https://github.com/dsyrock/Reascript/raw/3297979def74f9b80ecdb785511d786a25bdd934/%E5%85%B6%E4%BB%96/DSY_GUI.lua</source>
       </version>
     </reapack>
     <reapack name="DSY_item置顶.lua" type="script" desc="item置顶">
