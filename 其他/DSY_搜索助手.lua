@@ -18,8 +18,8 @@ function msg(value)
     reaper.ShowConsoleMsg(tostring(value) .. "\n")
 end
 
-local config_path=reaper.GetResourcePath()..'/'
-config_path=config_path..'/Scripts/DSY_搜索助手.ini'
+local mainPath=debug.getinfo(1,'S').source:match[[^@?(.*[\/])[^\/]-$]]
+local config_path=mainPath..'DSY_搜索助手.ini'
 if not reaper.file_exists(config_path) then
     local file=io.output(config_path)
     file:close()
@@ -204,10 +204,17 @@ function insert_words(need_or)  --插入关键词
     local result=#words[title]>1 and '( '..table.concat(words[title], ' OR ')..' )' or words[title][1]
     insert_to_search_words(result, need_or)
 end
+
+function copy_words(text)  --复制关键词
+    if text=='' then return end
+    reaper.CF_SetClipboard(text)
+    local mousex, mousey=reaper.GetMousePosition()
+    reaper.TrackCtl_SetToolTip('已复制关键词到剪贴板', mousex, mousey-20, false)
+end
 -------------------------------------------------------------------搜索相关-------------------------------------------------------------------
 function start_search(text)
     local title = reaper.JS_Localize("Media Explorer","common")
-    local hwnd = reaper.JS_Window_Find(title, true) or reaper.JS_Window_Find(reaper.LocalizeString("Media Explorer", 'explorer', 1 ), true)
+    local hwnd = reaper.JS_Window_Find(title, true)
     local search = reaper.JS_Window_FindChildByID(hwnd, 1015)
     reaper.JS_Window_SetTitle(search, text)
     reaper.JS_WindowMessage_Send(hwnd, "WM_COMMAND", 42051, 0, 0, 0)
@@ -258,6 +265,7 @@ local click_search={}
 click_search.left=function() start_search(searchWords) end
 
 local click_search_words={}
+click_search_words.left=function() copy_words(searchWords) end
 click_search_words.right=function() searchWords='' end
 
 function gui.main.drawing()
