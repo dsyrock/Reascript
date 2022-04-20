@@ -79,8 +79,9 @@ for v in text:gmatch('<RENDERPRESET.-RENDERPRESET_OUTPUT[^\n\r]+') do
 
 	if name1 and name2 and name1==name2 then 
         local sr, channel, render_mode, sr_use, resam, dither, code=v:match('<RENDERPRESET \"?'..esc(name1)..'\"? (%d+) (%d+) (%d+) (%d+) (%d+) (%d+) %d+%s+(%S+)')
-        local bound, edl, edr, source, pattern, tail, folder=v:match('RENDERPRESET_OUTPUT \"?'..esc(name1)..'\"? (%d+) (%S+) (%S+) (%d+) %d+ (%S+) (%d+) ([^\n\r]+)')
+		local bound, edl, edr, source, pattern, tail, folder=v:match('RENDERPRESET_OUTPUT \"?'..esc(name1)..'\"? (%d+) (%S+) (%S+) (%d+) %d+ (%S+) (%d+)%s*([^\n\r]*)')
         folder=folder:gsub('\"', '')
+		
         local normalize_option, targetNor, targetLim=v:match('RENDERPRESET_EXT \"?'..esc(name1)..'\"? (%S+) (%S+) (%S+)')
         local code2=v:match('RENDERPRESET2[^\n\r]+[\n\r]([^\n\r]+)[\n\r]>')
         preset_flag[#preset_flag+1]={name=name1, sr=sr, channel=channel, sr_use=sr_use, dither=dither, code=code, bound=bound, edl=edl, edr=edr, source=source, pattern=pattern, tail=tail, path=#folder>0 and folder or render_path, normalize_option=normalize_option, target_nor=targetNor, target_lim=targetLim, code2=code2 and code2:match('%S+') or ''}
