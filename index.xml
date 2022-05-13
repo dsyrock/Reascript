@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="noiZ Reascript" commit="461ab28a2d3fdec442f09524e236e507feb08ac2">
+<index version="1" name="noiZ Reascript" commit="206e7579de51804194ceae937017c79dec22051f">
   <category name="BPM相关">
     <reapack name="DSY_检测并对齐节奏.lua" type="script" desc="检测并对齐节奏">
       <version name="1.0" author="noiZ" time="2021-05-07T02:31:19Z">
@@ -320,6 +320,18 @@
     <reapack name="DSY_音效loop.lua" type="script" desc="音效loop">
       <version name="1.0" author="noiZ" time="2021-05-07T05:33:11Z">
         <source main="main">https://github.com/dsyrock/Reascript/raw/344965809559cc8e82ca48b8a22ceecc5ef47d4e/Loop%E7%9B%B8%E5%85%B3/DSY_%E9%9F%B3%E6%95%88loop.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="ME相关">
+    <reapack name="DSY_在ME中为选中文件写入Cue.lua" type="script" desc="在ME中为选中文件写入Cue">
+      <version name="1.0" author="noiZ" time="2022-05-13T15:50:04Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/206e7579de51804194ceae937017c79dec22051f/ME%E7%9B%B8%E5%85%B3/DSY_%E5%9C%A8ME%E4%B8%AD%E4%B8%BA%E9%80%89%E4%B8%AD%E6%96%87%E4%BB%B6%E5%86%99%E5%85%A5Cue.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSY_插入素材并移动对齐点到标记处.lua" type="script" desc="插入素材并移动对齐点到标记处">
+      <version name="1.0" author="noiZ" time="2022-05-13T15:50:04Z">
+        <source main="main">https://github.com/dsyrock/Reascript/raw/206e7579de51804194ceae937017c79dec22051f/ME%E7%9B%B8%E5%85%B3/DSY_%E6%8F%92%E5%85%A5%E7%B4%A0%E6%9D%90%E5%B9%B6%E7%A7%BB%E5%8A%A8%E5%AF%B9%E9%BD%90%E7%82%B9%E5%88%B0%E6%A0%87%E8%AE%B0%E5%A4%84.lua</source>
       </version>
     </reapack>
   </category>
