@@ -33,7 +33,7 @@ for k, v in pairs(its) do
     if curtemp~=curcheck then
         reaper.Main_OnCommand(40541, 0)  --set snap to cursor
     end
-    reaper.SelectAllMediaItems(0, 0)
+    reaper.SelectAllMediaItems(0, 0) 
 end
 
 for k, v in pairs(its) do
