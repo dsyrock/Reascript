@@ -1,12 +1,8 @@
 --[[
 ReaScript Name: item置顶
-Version: 1.1
+Version: 1.2
 Author: noiZ
 ]]
-
-function msg(value)
-    reaper.ShowConsoleMsg(tostring(value) .. "\n")
-end
 
 -------------------------------------------------------------------窗口参数-------------------------------------------------------------------
 local win=reaper.GetOS():match("Win")
@@ -37,6 +33,7 @@ local lock=false  --锁定状态
 local state=''  --按键状态
 local itLock  --锁定的item
 local redraw=false  --重绘状态
+local pressLeft=false  --左键左键状态
 
 -------------------------------------------------------------------窗口初始化-------------------------------------------------------------------
 gfx.clear=4210752
@@ -212,6 +209,13 @@ function blit_from_buffer(buf, opt_gfx_dest, opt_dest_w, opt_dest_h)
     gfx.blit(buf, 1, 0, 0, 0, img_w, img_h, 0, 0, opt_dest_w, opt_dest_h)
 end
 
+function draw_item_relative_line(x1, x2, x3)
+    if not lock or not pressLeft then return end
+    gfx.set(1, 1, 1, 1)
+    gfx.line(x1, 0, x1, hWin, 0)
+    gfx.line(x3, 0, x3, hWin, 0)
+    if x2~=x1 then gfx.line(x2, 0, x2, hWin, 0) end
+end
 -------------------------------------------------------------------功能-------------------------------------------------------------------
 function set_lock()
     if not lock then
@@ -225,12 +229,30 @@ function set_lock()
     redraw=true
 end
 
+function get_item_pixel()
+    if reaper.CountSelectedMediaItems(0)==0 then return false end
+
+    local it=reaper.GetSelectedMediaItem(0, 0)
+    if it==itLock then return false end
+
+    local pos=reaper.GetMediaItemInfo_Value(it, 'D_POSITION')
+    local edge=reaper.GetMediaItemInfo_Value(it, 'D_LENGTH')+pos
+    local snap=reaper.GetMediaItemInfo_Value(it, 'D_SNAPOFFSET')+pos
+
+    local left=reaper.GetSet_ArrangeView2(0, 0, 0, 0)
+    local zoomLevel=reaper.GetHZoomLevel()
+    local posX=(pos-left)*zoomLevel+viewLeft
+    local edgeX=(edge-left)*zoomLevel+viewLeft
+    local snapX=(snap-left)*zoomLevel+viewLeft
+    return posX, snapX, edgeX
+end
 -------------------------------------------------------------------主进程-------------------------------------------------------------------
 function main()
     if lock or reaper.CountSelectedMediaItems(0)>0 then
         local it=lock and itLock or reaper.GetSelectedMediaItem(0, 0)
-        local tk=reaper.GetActiveTake(it)
-        if not it or reaper.TakeIsMIDI(tk) then return end
+        local tk=it and reaper.GetActiveTake(it) or nil
+        local sr=tk and reaper.GetMediaItemTake_Source(tk) or nil
+        if not it or not tk or reaper.TakeIsMIDI(tk) or not reaper.CF_GetMediaSourceOnline(sr) then return end
         local posCheck=reaper.GetMediaItemInfo_Value(it, 'D_POSITION')
         local lenCheck=reaper.GetMediaItemInfo_Value(it, 'D_LENGTH')
         local volIT=reaper.GetMediaItemInfo_Value(it, 'D_VOL')
@@ -252,7 +274,7 @@ function main()
             hWinLast=gfx.h
             local isDock=gfx.dock(-1)>0
             local leftMax=math.max(screenL, posLast)
-            local ret, viewLeft, viewTop, viewRight=reaper.JS_Window_GetRect(hwnd)
+            _, viewLeft, viewTop, viewRight=reaper.JS_Window_GetRect(hwnd)
             local xDrawDock=viewLeft+1
             local xDrawCur=isDock and xDrawDock+(leftMax-screenL)*zoomLast or xDraw
             local wDrawCur=isDock and (math.min(screenR, posLast+lenLast)-leftMax)*zoomLast or wDraw
@@ -267,23 +289,38 @@ function main()
         itLast=0
     end
     gfx.blit(1, 1, 0)
+
 end
 
 function check_input()  --检测鼠标按键情况
     if gfx.mouse_cap==0 then  --无按键
         if state=='lock' then
             set_lock()
+            reaper.Main_OnCommand(reaper.NamedCommandLookup("_BR_FOCUS_ARRANGE_WND"),0)
         end
         state='idle'
     elseif gfx.mouse_cap==1 then  --按住左键
     elseif gfx.mouse_cap==2 then  --按住右键
         state='lock'
     end
+
+end
+
+function check_mouse()  --检测鼠标左键
+    pressLeft=reaper.JS_Mouse_GetState(-1)==1 and true or false  --左键检测
+    local x, y=reaper.GetMousePosition()
+    local itMouse=reaper.GetItemFromPoint(x, y, true)
+    if lock and pressLeft and itMouse then
+        local x1, x2, x3 = get_item_pixel()
+        if not x1 then return end
+        draw_item_relative_line(x1, x2, x3)
+    end
 end
 
 function main_loop()
     main()
     check_input()
+    check_mouse()
     if gfx.getchar()>=0 then reaper.defer(main_loop) end
 end
 main_loop()
